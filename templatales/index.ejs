@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css"/>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content">
+        <form id="create" action="/" method="post" enctype="multipart/form-data">
+            <input type="text" name="ma_sp" placeholder="Nhap ma sp">
+            <input type="text" name="ten_sp" placeholder="Nhap Ten sp">
+            <input type="number" name="so_luong" placeholder="Nhap so luong sp">
+            <input type="submit" value="Them moi sp">
+
+        </form>
+        <form action="/delete" id="delete" method="POST" enctype="multipart/form-data">
+            <div class="title"><h5>Danh sach san pham</h5> <input type="submit" value="Xoa"></div>
+        
+        <table border="1">
+            <tr>
+                <th>Ma San Pham</th>
+                <th>Ten San Pham</th>
+                <th>So Luong</th>
+                <th>Hinh anh</th>
+                <th>Chon</th>
+
+
+            </tr>
+
+            <% for(let i=0; i< data.length;i++ ){
+            %>
+                <tr>
+                    <td>
+                        <%=data[i].ma_sp%>
+                    </td>
+                    <td>
+                        <%=data[i].ten_sp%>
+                    </td>
+                    <td>
+                        <%=data[i].so_luong%>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="<%=data[i].ma_sp%>"/>
+                    </td>
+                </tr>
+                <% }%>
+
+
+        </table>
+    </form>
+    </div>
+</body>
+
+</html>
